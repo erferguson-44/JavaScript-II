@@ -2,7 +2,7 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+
 
   //Given this problem: 
   
@@ -11,40 +11,67 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   }
 
   // Potential Solution:
-
   // Higher order function using "cb" as the call back
   function firstItem(arr, cb) {
     return cb(arr[0]);
   }
-
   // Function invocation 
   firstItem(items, function(first) {
     console.log(first)
   });
 
-*/
 
 
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+  return cb (arr.length);
 }
 
+getLength(items, function(length){
+  console.log(`Array length is: ${length}`)
+});
+
+
+// last passes the last item of the array into the callback.
 function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+  return cb(arr[arr.length-1])
 }
 
-function sumNums(x, y, cb) {
+last (items,function(lastItem){
+  console.log(lastItem);
+})
+
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+function sumNums(x, y, cb) {
+  return cb(x + y)
 }
+sumNums(88,99,function(sumOf){
+  console.log(sumOf);
+});
 
-function multiplyNums(x, y, cb) {
+
   // multiplyNums multiplies two numbers and passes the result to the callback.
+function multiplyNums(x, y, cb) {
+  return cb(x*y)
 }
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+multiplyNums(44,4, function(timesNums){
+  console.log(timesNums)
+});
+
+// const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+// function contains checks if an item is present inside of the given array/list.
+// Pass true to the callback if it is, otherwise pass false.
+function contains (item, list, runCBFunction){
+  if (list.includes(item)){
+    return runCBFunction (true);
+  }
+  return runCBFunction (false);
 }
+function trueOrFalse(boolean){
+  return boolean;
+}
+console.log(contains("yo-yo", items, trueOrFalse));
+
 
 /* STRETCH PROBLEM */
 
