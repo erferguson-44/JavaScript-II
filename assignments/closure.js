@@ -1,6 +1,23 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function evertonLegend(){
+  let name = "Dixie Dean";
+  console.log(name);
+
+  function goalsScored(){
+    let goals = 383;
+    console.log (`${name} scored ${goals} goals`);
+
+    function cardsReceived(){
+      let redCards = 0;
+      console.log (`${name} scored ${goals} goals and received ${redCards} red cards.`);
+    }
+    cardsReceived();
+  }
+  goalsScored();
+}
+evertonLegend();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
