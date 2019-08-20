@@ -102,9 +102,7 @@ console.table(eduEmail);
 //filter out Companies by donation amount over $200
 
 let topDonation = runners.filter((x) => {
-    if (x.donation > 200){
-        return x
-    }
+    return x.donation > 200;
 })
 console.table(topDonation);
 
@@ -116,4 +114,3 @@ runners.map((x) => {
 });
 
 console.table(thankyouEmail.sort()); 
- 
